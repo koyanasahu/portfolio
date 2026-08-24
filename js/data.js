@@ -13,15 +13,14 @@ const portfolioData = {
     resumeUrl: "assets/resume/Koyana - 12527287 - Specialized CV(1).pdf",
     profilePhoto: "assets/KoyanaProfile(1).png",
     marqueeItems: [
-      "BUSINESS ANALYTICS",
-      "BUSINESS INTELLIGENCE",
-      "DATA ANALYTICS",
-      "POWER BI",
-      "SQL",
-      "PYTHON",
-      "EXCEL",
-      "PREDICTIVE ANALYTICS",
-      "BUSINESS ANALYST"
+      "6+ ANALYTICS PROJECTS",
+      "290+ LEADS ANALYSED",
+      "200+ SALES CALLS AUDITED",
+      "22 QUALIFIED LEADS",
+      "20+ COMPETITORS BENCHMARKED",
+      "TOP 5 EXPANSION CITIES",
+      "60K+ TRANSACTIONS",
+      "18K+ CUSTOMERS"
     ],
     heroStats: [
       { value: 6, suffix: "+", label: "Analytics Projects" },
@@ -266,15 +265,15 @@ As a former Business Analyst Intern at Zorgers Home Healthcare, I applied hands-
     subtitle: "A glimpse into my internship experience, events, projects and professional journey.",
     images: [
       {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.35 PM.jpeg",
-        alt: "Koyana Sahu presenting internship insights"
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.02 PM.jpeg",
+        alt: "Professional presentation and analytical briefing"
       },
       {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.36 PM (1).jpeg",
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.08 PM.jpeg",
         alt: "Academic and leadership seminar event"
       },
       {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.36 PM (2).jpeg",
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.17 PM.jpeg",
         alt: "Business analytics workshop session"
       },
       {
@@ -282,72 +281,24 @@ As a former Business Analyst Intern at Zorgers Home Healthcare, I applied hands-
         alt: "Executive presentation at Zorgers Healthcare"
       },
       {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.37 PM (1).jpeg",
-        alt: "Team collaboration and data sprint"
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.36 PM (2).jpeg",
+        alt: "Team collaboration and strategic review"
       },
       {
         src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.37 PM (2).jpeg",
-        alt: "Industry summit and networking"
-      },
-      {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.37 PM.jpeg",
-        alt: "Project discussion and strategic review"
-      },
-      {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.38 PM (1).jpeg",
-        alt: "Corporate operations and market research"
-      },
-      {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.38 PM (2).jpeg",
-        alt: "Event management and coordination lead"
-      },
-      {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.38 PM.jpeg",
-        alt: "Team presentation and project delivery"
+        alt: "Industry summit and professional networking"
       },
       {
         src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.39 PM (1).jpeg",
-        alt: "Leadership and team mentoring session"
-      },
-      {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.39 PM.jpeg",
-        alt: "Campus analytics showcase"
-      },
-      {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.40 PM.jpeg",
-        alt: "Business case presentation"
-      },
-      {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.44 PM (1).jpeg",
-        alt: "Internship milestone celebration"
+        alt: "Leadership and team coordination lead"
       },
       {
         src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.44 PM.jpeg",
-        alt: "Professional journey and achievement"
-      },
-      {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.02 PM.jpeg",
-        alt: "Conference and workshop participation"
-      },
-      {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.05 PM.jpeg",
-        alt: "Analytics project deliverable review"
-      },
-      {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.08 PM.jpeg",
-        alt: "Professional seminar session"
-      },
-      {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.16 PM.jpeg",
-        alt: "Event operational management"
-      },
-      {
-        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.17 PM.jpeg",
-        alt: "Club coordination and meeting"
+        alt: "Milestone celebration and project deliverable review"
       },
       {
         src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.27.26 PM.jpeg",
-        alt: "Professional experience glimpse"
+        alt: "Professional journey and achievements"
       }
     ]
   },
@@ -365,7 +316,7 @@ As a former Business Analyst Intern at Zorgers Home Healthcare, I applied hands-
         "Benchmarked YoY product performance using CTEs, LAG() and window functions, surfacing growth/decline patterns against historical averages for KPI and performance management"
       ],
       tools: ["SQL Server", "SQL", "CTEs", "Window Functions", "Data Modelling"],
-      githubUrl: "https://github.com/koyanasahu",
+      githubUrl: "https://github.com/koyanasahu/Revenue-Concentration-Product-Mix-Retention",
       dashboardUrl: ""
     },
     {
@@ -380,7 +331,7 @@ As a former Business Analyst Intern at Zorgers Home Healthcare, I applied hands-
         "Prioritized delivery risks by segmenting task criticality, milestone delays and cost deviations, translating findings into resource allocation and delivery-prioritization insights"
       ],
       tools: ["Power BI", "DAX", "Excel", "Data Modelling", "Variance Analysis", "KPI Analysis", "Risk Analysis"],
-      githubUrl: "https://github.com/koyanasahu",
+      githubUrl: "https://github.com/koyanasahu/Project-Delivery-Risk-Resource-Analytics",
       dashboardUrl: ""
     },
     {
@@ -395,7 +346,7 @@ As a former Business Analyst Intern at Zorgers Home Healthcare, I applied hands-
         "Derived customer profiles from clustering results, identifying 5 income-spending segments to inform targeted marketing, promotions, product placement and customer retention"
       ],
       tools: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-learn", "K-Means Clustering"],
-      githubUrl: "https://github.com/koyanasahu",
+      githubUrl: "https://github.com/koyanasahu/Customer-Value-Intelligence-Behavioral-Segmentation",
       dashboardUrl: ""
     },
     {
@@ -410,7 +361,7 @@ As a former Business Analyst Intern at Zorgers Home Healthcare, I applied hands-
         "Developed interactive P&L, Balance Sheet, Cash Flow and SoCE reports with drill-downs and multi-currency reporting to support management decision-making"
       ],
       tools: ["Power BI", "DAX", "Excel", "Data Modelling", "Variance Analysis"],
-      githubUrl: "https://github.com/koyanasahu",
+      githubUrl: "https://github.com/koyanasahu/Advanced-Financial-Analytics-Insights",
       dashboardUrl: ""
     },
     {
@@ -425,7 +376,7 @@ As a former Business Analyst Intern at Zorgers Home Healthcare, I applied hands-
         "Applied Multiple Linear Regression to monthly customer purchases; achieved an R² of 0.967, MAE of 595.03 and RMSE of 1,454.01 on the test set"
       ],
       tools: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-learn", "Jupyter Notebook"],
-      githubUrl: "https://github.com/koyanasahu",
+      githubUrl: "https://github.com/koyanasahu/Predictive-Customer-Lifetime-Value-CLV-Analytics",
       dashboardUrl: ""
     },
     {
