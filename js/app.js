@@ -16,6 +16,7 @@ function initPortfolio() {
   initAnimatedCounters();
   initEducationHover();
   initInternshipPopupCarousel();
+  initPhotoGalleryCarousel();
   initProjectsCarousel();
   initModals();
   initContactForm();
@@ -29,10 +30,12 @@ function initPortfolio() {
 function renderAllSections() {
   const headerContainer = document.getElementById("header-root");
   const heroContainer = document.getElementById("hero-root");
+  const marqueeContainer = document.getElementById("marquee-root");
   const aboutContainer = document.getElementById("about-root");
   const educationContainer = document.getElementById("education-root");
   const experienceContainer = document.getElementById("experience-root");
   const internshipProjectsContainer = document.getElementById("internship-projects-root");
+  const photoGalleryContainer = document.getElementById("photo-gallery-root");
   const projectsContainer = document.getElementById("projects-root");
   const certificationsContainer = document.getElementById("certifications-root");
   const extracurricularContainer = document.getElementById("extracurricular-root");
@@ -42,10 +45,12 @@ function renderAllSections() {
 
   if (headerContainer) headerContainer.innerHTML = Components.renderNavigation(portfolioData);
   if (heroContainer) heroContainer.innerHTML = Components.renderHero(portfolioData);
+  if (marqueeContainer) marqueeContainer.innerHTML = Components.renderMarquee(portfolioData);
   if (aboutContainer) aboutContainer.innerHTML = Components.renderAbout(portfolioData);
   if (educationContainer) educationContainer.innerHTML = Components.renderEducation(portfolioData);
   if (experienceContainer) experienceContainer.innerHTML = Components.renderExperience(portfolioData);
   if (internshipProjectsContainer) internshipProjectsContainer.innerHTML = Components.renderInternshipProjects(portfolioData);
+  if (photoGalleryContainer) photoGalleryContainer.innerHTML = Components.renderPhotoGallery(portfolioData);
   if (projectsContainer) projectsContainer.innerHTML = Components.renderFeaturedProjects(portfolioData);
   if (certificationsContainer) certificationsContainer.innerHTML = Components.renderCertifications(portfolioData);
   if (extracurricularContainer) extracurricularContainer.innerHTML = Components.renderActivities(portfolioData);
@@ -221,6 +226,142 @@ function initAnimatedCounters() {
   }, { threshold: 0.2 });
 
   counterElements.forEach(el => counterObserver.observe(el));
+}
+
+/**
+ * Photo Gallery Carousel (Stacked 3-Card Interactive Carousel)
+ */
+function initPhotoGalleryCarousel() {
+  const container = document.getElementById("galleryCardsContainer");
+  const stage = document.getElementById("galleryStage");
+  const prevBtn = document.getElementById("galleryPrevBtn");
+  const nextBtn = document.getElementById("galleryNextBtn");
+  const mobilePrevBtn = document.getElementById("galleryMobilePrev");
+  const mobileNextBtn = document.getElementById("galleryMobileNext");
+  const counter = document.getElementById("galleryCounter");
+
+  if (!container) return;
+
+  const cards = Array.from(container.querySelectorAll(".gallery-card"));
+  const totalCards = cards.length;
+  if (totalCards === 0) return;
+
+  let activeIndex = 0;
+
+  const updateGalleryCards = (index) => {
+    // Infinite circular loop wrapping
+    if (index < 0) {
+      activeIndex = totalCards - 1;
+    } else if (index >= totalCards) {
+      activeIndex = 0;
+    } else {
+      activeIndex = index;
+    }
+
+    const prevIndex = (activeIndex - 1 + totalCards) % totalCards;
+    const nextIndex = (activeIndex + 1) % totalCards;
+
+    cards.forEach((card, idx) => {
+      // Remove previous positioning classes
+      card.classList.remove("active", "center-card", "left-card", "right-card", "hidden-card");
+
+      if (idx === activeIndex) {
+        card.classList.add("active", "center-card");
+        card.setAttribute("aria-hidden", "false");
+        card.tabIndex = 0;
+      } else if (idx === prevIndex) {
+        card.classList.add("left-card");
+        card.setAttribute("aria-hidden", "true");
+        card.tabIndex = -1;
+      } else if (idx === nextIndex) {
+        card.classList.add("right-card");
+        card.setAttribute("aria-hidden", "true");
+        card.tabIndex = -1;
+      } else {
+        card.classList.add("hidden-card");
+        card.setAttribute("aria-hidden", "true");
+        card.tabIndex = -1;
+      }
+    });
+
+    if (counter) {
+      counter.textContent = `${activeIndex + 1} / ${totalCards}`;
+    }
+  };
+
+  const handlePrev = (e) => {
+    if (e) e.preventDefault();
+    updateGalleryCards(activeIndex - 1);
+  };
+
+  const handleNext = (e) => {
+    if (e) e.preventDefault();
+    updateGalleryCards(activeIndex + 1);
+  };
+
+  if (prevBtn) prevBtn.addEventListener("click", handlePrev);
+  if (nextBtn) nextBtn.addEventListener("click", handleNext);
+  if (mobilePrevBtn) mobilePrevBtn.addEventListener("click", handlePrev);
+  if (mobileNextBtn) mobileNextBtn.addEventListener("click", handleNext);
+
+  // Click on side cards to bring them into center
+  container.addEventListener("click", (e) => {
+    const card = e.target.closest(".gallery-card");
+    if (!card) return;
+
+    const cardIndex = parseInt(card.getAttribute("data-gallery-index"), 10);
+    if (!isNaN(cardIndex) && cardIndex !== activeIndex) {
+      updateGalleryCards(cardIndex);
+    }
+  });
+
+  // Keyboard navigation when stage or cards are focused
+  if (stage) {
+    stage.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        handlePrev();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        handleNext();
+      }
+    });
+  }
+
+  // Touch Swipe Support
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let touchStartY = 0;
+  let touchEndY = 0;
+
+  container.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  container.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipe();
+  }, { passive: true });
+
+  const handleSwipe = () => {
+    const deltaX = touchStartX - touchEndX;
+    const deltaY = touchStartY - touchEndY;
+    const threshold = 35;
+
+    // Ensure horizontal gesture intent over vertical scrolling
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > threshold) {
+      if (deltaX > 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+  };
+
+  // Initial display setup
+  updateGalleryCards(0);
 }
 
 /**

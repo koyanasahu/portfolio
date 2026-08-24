@@ -158,8 +158,8 @@ const Components = {
             <div class="profile-card-wrapper">
               <div class="profile-executive-card">
                 <div class="card-inner-glow"></div>
-                <div class="profile-avatar">
-                  <span class="avatar-initials">${data.personal.monogram}</span>
+                <div class="profile-avatar profile-avatar-photo">
+                  <img src="${data.personal.profilePhoto || 'assets/KoyanaProfile(1).png'}" alt="${data.personal.name} - Profile Photo" class="hero-profile-image" />
                 </div>
                 <div class="profile-meta">
                   <h3 class="profile-name">${data.personal.name}</h3>
@@ -200,6 +200,46 @@ const Components = {
                 <span class="badge-icon">${Icons.excel}</span>
                 <span class="badge-title">EXCEL</span>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+  },
+
+  // Marquee Component (Immediately above About Me)
+  renderMarquee(data) {
+    const items = data.personal.marqueeItems || [
+      "BUSINESS ANALYTICS",
+      "BUSINESS INTELLIGENCE",
+      "DATA ANALYTICS",
+      "POWER BI",
+      "SQL",
+      "PYTHON",
+      "EXCEL",
+      "PREDICTIVE ANALYTICS",
+      "BUSINESS ANALYST"
+    ];
+
+    const marqueeContent = items
+      .map(item => `<span class="marquee-item"><span class="marquee-text">${item}</span><span class="marquee-bullet">•</span></span>`)
+      .join(" ");
+
+    return `
+      <section class="marquee-section" id="marquee-section" aria-label="Skills & Expertise Marquee">
+        <div class="marquee-track-wrapper">
+          <div class="marquee-track" aria-hidden="true">
+            <div class="marquee-group">
+              ${marqueeContent}
+            </div>
+            <div class="marquee-group">
+              ${marqueeContent}
+            </div>
+            <div class="marquee-group">
+              ${marqueeContent}
+            </div>
+            <div class="marquee-group">
+              ${marqueeContent}
             </div>
           </div>
         </div>
@@ -565,6 +605,74 @@ const Components = {
             </div>
           </div>
 
+        </div>
+      </section>
+    `;
+  },
+
+  // Stacked / Overlapping 3-Card Photo Gallery Section
+  renderPhotoGallery(data) {
+    const galleryData = data.photoGallery || {
+      tag: "05. PROFESSIONAL MOMENTS",
+      heading: "PHOTO GALLERY",
+      subtitle: "A glimpse into my internship experience, events, projects and professional journey.",
+      images: []
+    };
+
+    const images = galleryData.images || [];
+    
+    // Generate card markup with dynamic positioning classes
+    const cardsHtml = images
+      .map((img, idx) => `
+        <div class="gallery-card ${idx === 0 ? "active center-card" : idx === 1 ? "right-card" : idx === images.length - 1 ? "left-card" : "hidden-card"}" data-gallery-index="${idx}" role="group" aria-label="Photo ${idx + 1} of ${images.length}">
+          <div class="gallery-card-inner">
+            <img src="${img.src}" alt="${img.alt || `Portfolio moment ${idx + 1}`}" class="gallery-card-img" loading="lazy" />
+            ${img.alt ? `<div class="gallery-card-caption"><p>${img.alt}</p></div>` : ""}
+          </div>
+        </div>
+      `)
+      .join("");
+
+    return `
+      <section class="photo-gallery-section section-padding" id="photo-gallery" aria-label="Photo Gallery">
+        <div class="container">
+          <div class="section-header text-center photo-gallery-header">
+            <span class="section-tag">${galleryData.tag || "PHOTO GALLERY"}</span>
+            <h2 class="section-title">${galleryData.heading || "PHOTO GALLERY"}</h2>
+            <p class="section-subtitle">${galleryData.subtitle || "A glimpse into my internship experience, events, projects and professional journey."}</p>
+          </div>
+
+          <div class="photo-gallery-carousel-wrapper">
+            <!-- Previous Button -->
+            <button class="gallery-nav-btn gallery-prev-btn" id="galleryPrevBtn" aria-label="Previous photo" title="Previous photo">
+              <span class="nav-btn-icon">${Icons.chevronLeft}</span>
+              <span class="nav-btn-label">&larr; PREVIOUS</span>
+            </button>
+
+            <!-- Stacked Cards Container -->
+            <div class="gallery-stage" id="galleryStage" tabindex="0" aria-roledescription="carousel" aria-label="Photo highlights carousel">
+              <div class="gallery-cards-container" id="galleryCardsContainer">
+                ${cardsHtml}
+              </div>
+            </div>
+
+            <!-- Next Button -->
+            <button class="gallery-nav-btn gallery-next-btn" id="galleryNextBtn" aria-label="Next photo" title="Next photo">
+              <span class="nav-btn-label">NEXT &rarr;</span>
+              <span class="nav-btn-icon">${Icons.chevronRight}</span>
+            </button>
+          </div>
+
+          <!-- Mobile Controls Fallback Row -->
+          <div class="gallery-mobile-controls">
+            <button class="btn btn-outline btn-sm gallery-mobile-btn" id="galleryMobilePrev" aria-label="Previous photo">
+              ${Icons.chevronLeft} <span>PREVIOUS</span>
+            </button>
+            <span class="gallery-counter-badge" id="galleryCounter">1 / ${images.length}</span>
+            <button class="btn btn-outline btn-sm gallery-mobile-btn" id="galleryMobileNext" aria-label="Next photo">
+              <span>NEXT</span> ${Icons.chevronRight}
+            </button>
+          </div>
         </div>
       </section>
     `;

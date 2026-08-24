@@ -11,6 +11,18 @@ const portfolioData = {
     linkedin: "https://linkedin.com/in/koyana-sahu",
     github: "https://github.com/koyanasahu",
     resumeUrl: "assets/resume/Koyana - 12527287 - Specialized CV(1).pdf",
+    profilePhoto: "assets/KoyanaProfile(1).png",
+    marqueeItems: [
+      "BUSINESS ANALYTICS",
+      "BUSINESS INTELLIGENCE",
+      "DATA ANALYTICS",
+      "POWER BI",
+      "SQL",
+      "PYTHON",
+      "EXCEL",
+      "PREDICTIVE ANALYTICS",
+      "BUSINESS ANALYST"
+    ],
     heroStats: [
       { value: 6, suffix: "+", label: "Analytics Projects" },
       { value: 290, suffix: "+", label: "Leads Audited" },
@@ -247,6 +259,98 @@ As a former Business Analyst Intern at Zorgers Home Healthcare, I applied hands-
       ]
     }
   ],
+
+  photoGallery: {
+    tag: "05. PROFESSIONAL MOMENTS",
+    heading: "PHOTO GALLERY",
+    subtitle: "A glimpse into my internship experience, events, projects and professional journey.",
+    images: [
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.35 PM.jpeg",
+        alt: "Koyana Sahu presenting internship insights"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.36 PM (1).jpeg",
+        alt: "Academic and leadership seminar event"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.36 PM (2).jpeg",
+        alt: "Business analytics workshop session"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.36 PM.jpeg",
+        alt: "Executive presentation at Zorgers Healthcare"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.37 PM (1).jpeg",
+        alt: "Team collaboration and data sprint"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.37 PM (2).jpeg",
+        alt: "Industry summit and networking"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.37 PM.jpeg",
+        alt: "Project discussion and strategic review"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.38 PM (1).jpeg",
+        alt: "Corporate operations and market research"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.38 PM (2).jpeg",
+        alt: "Event management and coordination lead"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.38 PM.jpeg",
+        alt: "Team presentation and project delivery"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.39 PM (1).jpeg",
+        alt: "Leadership and team mentoring session"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.39 PM.jpeg",
+        alt: "Campus analytics showcase"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.40 PM.jpeg",
+        alt: "Business case presentation"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.44 PM (1).jpeg",
+        alt: "Internship milestone celebration"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.44 PM.jpeg",
+        alt: "Professional journey and achievement"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.02 PM.jpeg",
+        alt: "Conference and workshop participation"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.05 PM.jpeg",
+        alt: "Analytics project deliverable review"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.08 PM.jpeg",
+        alt: "Professional seminar session"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.16 PM.jpeg",
+        alt: "Event operational management"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.23.17 PM.jpeg",
+        alt: "Club coordination and meeting"
+      },
+      {
+        src: "assets/gallery/WhatsApp Image 2026-08-23 at 11.27.26 PM.jpeg",
+        alt: "Professional experience glimpse"
+      }
+    ]
+  },
 
   featuredProjects: [
     {
